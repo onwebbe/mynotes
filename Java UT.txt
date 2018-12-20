@@ -1,0 +1,25 @@
+mockito
+when(configurationProvider.getObjectDefinition(isA(Class.class)).thenReturn(objDef);
+
+
+mockit
+mock method
+new MockUp<GenericObjectToLazyBean>() {
+      @mockit.Mock
+      MentoringProgramMatchedParticipant transform(GenericObject eo) {
+        final MentoringProgramMatchedParticipant part1 = new MentoringProgramMatchedParticipant();
+        return part1;
+      }
+    };
+
+mock new instance constructor
+new MockUp<GenericObjectToLazyBean>() {
+      @mockit.Mock
+      public void $init() {}
+    };
+
+mock statis/private field when new the class
+new MockUp<GenericObjectToLazyBean>() {
+      @mockit.Mock
+      public void $clinit() {}
+    };
