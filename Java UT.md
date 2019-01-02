@@ -59,3 +59,9 @@ public boolean matches(Object o) {
   return true;
 }
 }));
+
+
+to verify the object is been touched or not (exclude already verified method)
+for example after executed the production code, the program only be called to getExternalIdString once and no other code to touch. so after verify the getExternalIdString, using verifyNoMoreInteractions to ensure no other touch of program. (including getter and setter)
+verify(program, times(1)).getExternalIdString();
+verifyNoMoreInteractions(program);
