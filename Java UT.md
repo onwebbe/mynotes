@@ -38,3 +38,21 @@ new Verifications() {{
 
 
 Deencapsulation class for execute classes
+
+// same as below 2
+// issue is Could not only capture the mentioned Class type argument but all, so require to set time to the number where the method been executed without the class type
+ArgumentCaptor<DeleteGenericObjectsByIds> argument = ArgumentCaptor.forClass(DeleteGenericObjectsByIds.class);
+verify(scaHandler, times(2)).execute(argument.capture());
+System.out.println(argument.getAllValues());
+      
+verify(scaHandler, times(2)).execute(argThat(new ArgumentMatcher<DeleteGenericObjectsByIds>() {
+@Override
+public boolean matches(Object o) {
+  if (o instanceof DeleteGenericObjectsByIds) {
+    DeleteGenericObjectsByIds param = (DeleteGenericObjectsByIds)o;
+    boolean isContainAllIdsWhenDelete = param.getIDs().containsAll(Arrays.asList(1234L, 2345L, 3456L));
+    return isContainAllIdsWhenDelete;
+  }
+  return true;
+}
+}));
