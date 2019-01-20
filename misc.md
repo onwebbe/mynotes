@@ -16,3 +16,6 @@ docker run \
   -v "$HOME":/home \
   -v /usr/local/bin/docker:/usr/bin/docker \
   jenkinsci/blueocean
+
+
+mongodb vscode client "Azure Cosmos DB"
