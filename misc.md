@@ -19,3 +19,7 @@ docker run \
 
 
 mongodb vscode client "Azure Cosmos DB"
+
+
+nginx
+docker run -p 5000:80--name mynginx -v /data/docker-data/nginx/www:/www -v /data/docker-data/nginx/conf/nginx.conf:/etc/nginx/nginx.conf -v /data/docker-data/nginx/logs:/wwwlogs -d nginx
